@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ontocolab</title>
+        <meta http-equiv="content-type" content="application/xml;charset=utf-8" />
+        <link rel="shortcut icon" href="view/favicon.ico" type="image/x-icon" />
+        <script type="text/javascript" src="../../../../lib/Brython3.2.5/brython.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gojs/1.6.2/go-debug.js"></script>
+            <script type="text/python">
+            from main import main
+            from browser import window
+            from javascript import JSConstructor
+            GO = window.go
+            mk = JSConstructor(GO.GraphObject.make)
+            gb = JSConstructor(GO.Binding)
+            gg = JSConstructor(GO.GraphLinksModel)
+            main(mk, GO, gb, gg)
+            </script>
+    </head>
+    <body onLoad="brython(1, {static_stdlib_import: true})" class="main">
+        <div id="myDiagramDiv"
+     style="width:400px; height:150px; background-color: #DAE4E4;"></div>
+
+        <div id="pydiv"></div>
+    </body>
+</html>
